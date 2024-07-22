@@ -7,11 +7,15 @@ public class Arrays {
         }
     }
 
-    static int sum_array(int[] arr){
+    // Starting and ending are given.
+    static int sum_array(int[] arr,int a,int b){
         int sum =0;
-        for(int i=0;i<arr.length;i++){
-            sum = arr[i] + sum;
+        for(int i=a;i<=b;i++){
+            sum += arr[i];
         }
+        // for(int i : arr){
+        //     sum+=i;
+        // }
         return sum;
     }
     static void reverse_oder(int[] arr){
@@ -30,6 +34,26 @@ public class Arrays {
         for(int i : arr){
             System.out.print(i + " ");
         }
+    } 
+    // Reverse the array betwen the given indexing.
+    static void reverseusingswap(int[] arr,int a,int b){
+        for(int i=a,j=b;i<j;j--,i++){
+            // swap(arr, i, j);
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] =temp;
+        }
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+    }
+    static void swap(int[] arr,int a,int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp; 
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
     }
     public static void main(String[] args) {
         /*int[] arr2 = new int[5];
@@ -41,15 +65,17 @@ public class Arrays {
         arr1[2] = 99;
         System.out.println(arr1);*/
         
-        int[] arr = new int[5];
-        for(int i=0 ;i<arr.length;i++){
-            arr[i] = i+1;
-        }
+        // int[] arr = new int[5];
+        // for(int i=0 ;i<arr.length;i++){
+        //     arr[i] = i+1;
+        // }
 
         int [] nums = {1,2,3,4,5};
         // printarr(arr);
-        // System.out.println(sum_array(nums));
+        // System.out.println(sum_array(nums,1,3));
         // reverse_oder(nums);
-        reverse_array(arr);
+        // reverse_array(arr);
+        // swap(nums,1,3);
+        reverseusingswap(nums,1,3);
     }
 }
